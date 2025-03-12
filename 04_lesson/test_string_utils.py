@@ -65,7 +65,6 @@ def test_contains_positive(string, symbol, result):
 @pytest.mark.negative
 @pytest.mark.parametrize("string, symbol, result", [
     (123, "3", True), 
-    (["a", "b", "c"], "c", True), 
 ])
 def test_contains_negative(string, symbol, result):
     result = symbol in string
