@@ -21,8 +21,8 @@ def test_capitalize_positive(input, res):
 @pytest.mark.xfail()
 @pytest.mark.negative
 @pytest.mark.parametrize("input, res", [
-    (12121212, TypeError), 
-    (None, AttributeError), 
+    (12121212, "12121212"), 
+    (None, "None"), 
 ])
 def test_capitalize_negative(input, res):
     assert string_utils.capitalize(input) == res
@@ -41,8 +41,8 @@ def test_trim_positive(input, res):
 @pytest.mark.xfail()
 @pytest.mark.negative
 @pytest.mark.parametrize("input, res", [
-    ([ ], AttributeError), 
-    ( False, AttributeError), 
+    ([ ], ""), 
+    ( False, "False"), 
 ])
 def test_trim_negative(input, res):
     assert string_utils.trim(input) == res
@@ -64,8 +64,8 @@ def test_contains_positive(string, symbol, result):
 @pytest.mark.xfail()
 @pytest.mark.negative
 @pytest.mark.parametrize("string, symbol, result", [
-    (123, "3", TypeError), 
-    (["a", "b", "c"], "c", TypeError), 
+    (123, "3", True), 
+    (["a", "b", "c"], "c", True), 
 ])
 def test_contains_negative(string, symbol, result):
     result = symbol in string
@@ -85,8 +85,8 @@ def test_delete_symbol_positive(string, symbol, result):
 @pytest.mark.xfail()
 @pytest.mark.negative
 @pytest.mark.parametrize("string, symbol, result", [
-    (123456, "2", AssertionError), 
-    (["test", "test"], "s", AssertionError),
+    (123456, "2", "13456"), 
+    (["test"], "s", "tet"),
 ])
 def test_delete_symbol_negative(string, symbol, result):
     assert string_utils.delete_symbol(string, symbol) == result
