@@ -22,3 +22,6 @@ sleep(3)
 button = driver.find_element(By.TAG_NAME, "button")
 button.click()
 sleep(3)
+
+#Закрыть браузер
+driver.close()

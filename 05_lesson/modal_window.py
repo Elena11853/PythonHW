@@ -11,7 +11,10 @@ driver = webdriver.Firefox(service=FirefoxService(
 
 driver.get("http://the-internet.herokuapp.com/entry_ad")
 
-sleep(5)
+sleep(3)
 close_button = driver.find_element(By.CSS_SELECTOR, ".modal .modal-footer p")
 close_button.click()
-sleep(5)
+sleep(3)
+
+#Закрыть браузер
+driver.close()

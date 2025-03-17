@@ -21,3 +21,6 @@ sleep(3)
 #Ввод текста "999" 
 input.send_keys('999')
 sleep(3)
+
+#Закрыть браузер
+driver.close()
